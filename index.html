@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPPIGOT — Stormwater Pollution Prevention in Government Operations Tool</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>SPPIGOT</h1>
+      <p class="tagline">Stormwater Pollution Prevention in Government Operations Tool</p>
+    </div>
+  </header>
+
+  <nav class="stepper" aria-label="Progress">
+    <div class="container">
+      <ol>
+        <li class="step active" data-step="intro"><span>1</span> Introduction</li>
+        <li class="step" data-step="screening"><span>2</span> Screening</li>
+        <li class="step" data-step="assessment"><span>3</span> P2 Assessment</li>
+        <li class="step" data-step="results"><span>4</span> Results &amp; Actions</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- INTRO -->
+    <section id="section-intro" class="section active">
+      <h2>Welcome</h2>
+      <p class="lede">
+        Use the SPPIGOT to see how your municipality, tribe, or territory's stormwater operations
+        address pollution prevention (P2) and identify actions for integrating P2 in your community.
+      </p>
+      <div class="card">
+        <h3>How it works</h3>
+        <ol class="how-it-works">
+          <li><strong>Screening.</strong> For six common government operations, indicate whether your government
+            has control and how important the operation is as a pollution source. The tool ranks each as
+            <em>high</em> or <em>low</em> priority for pollution prevention.</li>
+          <li><strong>P2 Assessment.</strong> For each high-priority operation, answer a short set of
+            yes/no questions about current practices. You can skip any question.</li>
+          <li><strong>Results &amp; Actions.</strong> The tool generates a tailored list of recommended
+            pollution prevention actions, which you can filter by pollutants addressed and co-benefits
+            and print to PDF.</li>
+        </ol>
+        <button class="btn btn-primary btn-lg" data-go="screening">Begin Screening &rarr;</button>
+      </div>
+    </section>
+
+    <!-- SCREENING -->
+    <section id="section-screening" class="section">
+      <h2>Step 1 &middot; Screening</h2>
+      <p class="lede">
+        For each operation below, answer the two questions. Operations your government does
+        <strong>not</strong> control are automatically ranked low priority.
+      </p>
+      <div id="screening-list"></div>
+      <div class="actions">
+        <button class="btn" data-go="intro">&larr; Back</button>
+        <button class="btn btn-primary" id="screening-next">See Priorities &rarr;</button>
+      </div>
+    </section>
+
+    <!-- ASSESSMENT -->
+    <section id="section-assessment" class="section">
+      <h2>Step 2 &middot; P2 Assessment</h2>
+      <p class="lede">
+        Based on your screening, the operations below are <strong>high priority</strong> for
+        pollution prevention. Answer the questions to assess current P2 practices. You can skip
+        any question and move on.
+      </p>
+      <div id="priority-summary"></div>
+      <div id="assessment-list"></div>
+      <div class="actions">
+        <button class="btn" data-go="screening">&larr; Back to Screening</button>
+        <button class="btn btn-primary" id="assessment-next">View Recommended Actions &rarr;</button>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="section-results" class="section">
+      <h2>Step 3 &middot; Recommended Actions</h2>
+      <p class="lede">
+        Below are pollution prevention actions tailored to your responses. Each is shown because
+        you answered <strong>No</strong> or <strong>Unknown</strong> for the related practice.
+      </p>
+
+      <div class="filters card no-print">
+        <div class="filter-group">
+          <h4>Filter by pollutants addressed</h4>
+          <div id="filter-pollutants" class="chip-row"></div>
+        </div>
+        <div class="filter-group">
+          <h4>Filter by co-benefits</h4>
+          <div id="filter-benefits" class="chip-row"></div>
+        </div>
+        <div class="filter-actions">
+          <button class="btn btn-sm" id="filter-clear">Clear filters</button>
+          <span id="filter-count" class="muted"></span>
+        </div>
+      </div>
+
+      <div id="results-list"></div>
+
+      <div class="actions no-print">
+        <button class="btn" data-go="assessment">&larr; Back to Assessment</button>
+        <button class="btn btn-primary" id="print-pdf">Print to PDF</button>
+        <button class="btn" id="restart">Start Over</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer no-print">
+    <div class="container">
+      <p>SPPIGOT &middot; Stormwater Pollution Prevention in Government Operations Tool</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
