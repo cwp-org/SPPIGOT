@@ -276,6 +276,44 @@ main { padding: 1.5rem 0 4rem; }
   color: var(--color-muted);
   background: var(--color-surface);
 }
+.site-footer p { margin: 0.25rem 0; }
+.disclaimer { font-style: italic; }
+
+/* Intro logos */
+.logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+  margin: 0 0 1.25rem;
+}
+.logo {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+}
+.logo-cwp { max-width: 240px; }
+.logo-epa { max-width: 160px; }
+
+/* Intro attribution */
+.attribution {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  background: #eef5f8;
+  border-left: 3px solid var(--color-primary);
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius);
+  margin: 1rem 0 1.25rem;
+}
+.attribution em { color: var(--color-text); }
+
+/* Filter instructions */
+.filter-instructions {
+  margin: 0 0 0.5rem;
+  font-size: 0.92rem;
+  color: var(--color-muted);
+}
 
 /* Print */
 @media print {
