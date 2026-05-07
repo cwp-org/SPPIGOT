@@ -36,6 +36,24 @@ body {
 }
 .site-header h1 { margin: 0; font-size: 1.875rem; letter-spacing: 0.5px; }
 .site-header .tagline { margin: 0.25rem 0 0; font-size: 1rem; opacity: 0.92; }
+.site-header .header-row {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 1rem; flex-wrap: wrap;
+}
+.lang-switch {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: var(--radius);
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+.lang-switch:hover { background: rgba(255,255,255,0.28); }
 
 /* Stepper */
 .stepper {
